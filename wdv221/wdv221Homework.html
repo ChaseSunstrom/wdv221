@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>WDV221 Homework</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- this path is from /wdv221 back to /css -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <header>
+  <!-- Consistent header -->
+  <header class="site-header">
     <h1>WDV221 Homework Page</h1>
     <p>All assignments for WDV221 are listed below.</p>
   </header>
 
-  <main>
-    <ul class="assignment-list">
+  <!-- Consistent navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a class="active" href="wdv221Homework.html">WDV221 Homework</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h2>Assignments</h2>
+      <p>Click an assignment to view it. This list will grow as new work is added.</p>
+    </section>
+
+    <section>
+      <ul class="assignment-list">
+        <!-- Examples — update the hrefs to your real files -->
+        <li><a href="">Assignment 1</a></li>
+        <li><a href="">Assignment 2</a></li>
+        <li><a href="">Assignment 3</a></li>
+        <li><a href="">Final Project</a></li>
+      </ul>
+    </section>
   </main>
 
   <footer>

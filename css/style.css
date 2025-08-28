@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f0f4f8, #d9e4ec);
+    background: linear-gradient(135deg, #f0f4f8, #e6ebf1);
     margin: 0;
     padding: 0;
     color: #333;
@@ -10,16 +10,16 @@ body {
   
   /* Site Header */
   .site-header {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    background: linear-gradient(135deg, #3b82f6, #1e40af); /* blue gradient */
     color: white;
     text-align: center;
     padding: 3rem 1rem;
-    border-bottom: 5px solid #1B5E20;
+    border-bottom: 5px solid #1e3a8a;
   }
   
   .site-header h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .site-header p {
@@ -29,7 +29,7 @@ body {
   
   /* Navigation Bar */
   .navbar {
-    background: #333;
+    background: #1f2937; /* dark gray/navy */
     padding: 0.5rem;
   }
   
@@ -50,12 +50,13 @@ body {
     color: white;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: background 0.3s ease;
   }
   
-  .navbar a:hover {
-    background: #4CAF50;
+  .navbar a:hover,
+  .navbar a.active {
+    background: #3b82f6; /* blue hover */
   }
   
   /* Main Content */
@@ -65,24 +66,51 @@ body {
     padding: 0 1rem;
   }
   
-  .intro, .featured {
+  .intro, .featured, .contact-card {
     background: white;
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   }
   
   h2 {
     margin-top: 0;
-    color: #2E7D32;
+    color: #1e40af; /* consistent dark blue accent */
   }
   
-  /* Button */
+  /* Assignment List */
+  .assignment-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .assignment-list li {
+    margin: 1rem 0;
+  }
+  
+  .assignment-list a {
+    text-decoration: none;
+    color: #1e40af;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    display: block;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .assignment-list a:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* Buttons */
   .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #4CAF50;
+    background: #3b82f6;
     color: white;
     font-weight: bold;
     border-radius: 8px;
@@ -91,42 +119,44 @@ body {
   }
   
   .btn:hover {
-    background: #388E3C;
+    background: #2563eb;
     transform: translateY(-3px);
   }
   
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #333;
-    color: white;
-  }
-  
   /* Contact Card */
-.contact-card {
-    background: white;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
   .contact-card h2 {
-    color: #2E7D32;
+    color: #1e40af;
     margin-bottom: 1rem;
   }
   
   .contact-card a {
-    color: #4CAF50;
+    color: #2563eb;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .contact-card a:hover {
-    color: #2E7D32;
+    color: #1e3a8a;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #1f2937;
+    color: white;
+  }
+  
+  /* Make footer stick to bottom */
+html, body {
+    height: 100%;            /* full height */
+    margin: 0;
+    display: flex;
+    flex-direction: column;  /* stack header, main, footer vertically */
+  }
+  
+  main {
+    flex: 1;   /* expands to fill space so footer stays at bottom */
   }
   
