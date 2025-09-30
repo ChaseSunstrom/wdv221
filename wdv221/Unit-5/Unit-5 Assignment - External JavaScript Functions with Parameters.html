@@ -29,9 +29,9 @@ body {background-color:#eeddda;
 <p>Today's date: <span id="dateShort"></span></p>
 <p>&nbsp;</p>
 <p>Problem 4</p>
-<form>
+<form onsubmit="handleMask(); return false;">
 	<input type="text" id="textToMask"/>
-	<input type="button" value="Mask" onclick="handleMask()" />
+	<input type="submit" value="Mask" />
 </form>
 <p><br /></p>
 
@@ -52,20 +52,27 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Problem 2: Monday, January 2, 2018
 	var now = new Date();
 	var longDate = getDayName(now) + ', ' + getMonthName(now) + ' ' + getDayOfMonth(now) + ', ' + getFullYearValue(now);
-	document.getElementById('dateLong').textContent = longDate;
+	var dateLongEl = document.getElementById('dateLong');
+	if (dateLongEl) {
+		dateLongEl.textContent = longDate;
+	}
 });
 
 // Problem 3: 2, January 2018 (button click)
 function showShortDate() {
 	var now = new Date();
 	var shortDate = getDayOfMonth(now) + ', ' + getMonthName(now) + ' ' + getFullYearValue(now);
-	document.getElementById('dateShort').textContent = shortDate;
+	var dateShortEl = document.getElementById('dateShort');
+	if (dateShortEl) {
+		dateShortEl.textContent = shortDate;
+	}
 }
 
 // Problem 4: Mask input
 function handleMask() {
 	var input = document.getElementById('textToMask');
 	input.value = maskValue(input.value);
+	alert(input.value);
 }
 </script>
 
