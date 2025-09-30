@@ -36,12 +36,18 @@ function sayHello() {
 
 // 3) printHello: writes your name (called twice at runtime)
 function printHello() {
-	document.write('<p>' + myName + '</p>');
+	var out = document.getElementById('output');
+	var p = document.createElement('p');
+	p.textContent = myName;
+	out.appendChild(p);
 }
 
 // 4) printHello inside an h1
 function printHelloAsH1() {
-	document.write('<h1>' + myName + '</h1>');
+	var out = document.getElementById('output');
+	var h1 = document.createElement('h1');
+	h1.textContent = myName;
+	out.appendChild(h1);
 }
 
 // 5) characterCount
@@ -64,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>
   <button onclick="characterCount()">Character Count</button>
 </p>
+
+<div id="output"></div>
 
 </body>
 </html>

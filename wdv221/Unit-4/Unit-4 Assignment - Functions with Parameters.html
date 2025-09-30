@@ -25,21 +25,29 @@ var name2 = "Smith";
 
 function printName(firstName, lastName) {
 	// firstName lastName
-	document.write('<p>' + firstName + ' ' + lastName + '</p>');
+	appendLine(firstName + ' ' + lastName);
 	// lastName, firstName
-	document.write('<p>' + lastName + ', ' + firstName + '</p>');
+	appendLine(lastName + ', ' + firstName);
 	// lastName(all capitals), firstName
-	document.write('<p>' + lastName.toUpperCase() + ', ' + firstName + '</p>');
+	appendLine(lastName.toUpperCase() + ', ' + firstName);
 }
 
 // Runtime call for Problem 2
 document.addEventListener('DOMContentLoaded', function() {
 	printName(name1, name2);
 });
+
+function appendLine(text) {
+	var out = document.getElementById('nameOutput');
+	var p = document.createElement('p');
+	p.textContent = text;
+	out.appendChild(p);
+}
 </script>
 
 <p>
   <button onclick="processString(schoolName)">Process School Name</button>
 </p>
+<div id="nameOutput"></div>
 </body>
 </html>
