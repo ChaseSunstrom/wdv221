@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>WDV221 Intro Javascript</title>
+<link rel="stylesheet" href="../../css/style.css" />
 
 <style>
 
@@ -16,13 +17,23 @@ div#container	{
 
 </style>
 
+
+<nav class="navbar">
+	<ul>
+	  <li><a href="../../index.html">Home</a></li>
+	  <li><a href="../wdv221Homework.html">WDV221 Homework</a></li>
+	  <li><a href="../../contact.html">Contact</a></li>
+	</ul>
+  </nav>
+
+
 <script>		//1. Modify this run time script to output an h1 element that says 'Assignment 1'
 document.write('<h1>Assignment 1</h1>');
 
 // This runs after the DOM is ready so we can append to the container
 document.addEventListener('DOMContentLoaded', function() {
 	var container = document.getElementById('container');
-	var nameAndMajor = 'Name: Chase Sunstrom| Major: Computer Science';
+	var nameAndMajor = 'Name: Chase Sunstrom | Major: Computer Science';
 	var p = document.createElement('p');
 	p.textContent = nameAndMajor;
 	container.appendChild(p);
@@ -37,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <body>
 <div id="container">
+
 
     <h1>WDV221 Intro Javascript</h1>
     <h2>Introduction to Javascript - Assignment 1</h2>
