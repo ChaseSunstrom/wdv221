@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Unit-5 Event Handlers Demo</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 2rem; background: #f6f7fb; }
+.card { padding: 1rem; border: 1px solid #ccc; border-radius: 8px; background: #fff; width: 320px; }
+.btn { padding: 0.5rem 1rem; border: 0; border-radius: 6px; background: #2d6cdf; color: #fff; cursor: pointer; }
+.btn:hover { background: #1f54b0; }
+.swatch { width: 100px; height: 100px; background: #e0e0e0; border-radius: 8px; display: inline-block; transition: transform 0.2s ease, background 0.2s ease; }
+.log { font-family: Consolas, monospace; background: #0a0a0a; color: #d6ffd6; padding: 0.5rem; border-radius: 6px; min-height: 64px; margin-top: 1rem; white-space: pre-wrap; }
+label { display: block; margin-top: 1rem; }
+</style>
+
+<script>
+// JS event handler functions
+function jsClickHandler() {
+	alert('JS handler: Button clicked!');
+}
+
+function jsMouseOverHandler() {
+	console.log('JS handler: Mouse over swatch');
+	document.getElementById('swatch').style.transform = 'scale(1.1)';
+}
+
+function jsMouseOutHandler() {
+	console.log('JS handler: Mouse out swatch');
+	document.getElementById('swatch').style.transform = 'scale(1)';
+}
+
+function jsChangeHandler(e) {
+	var color = e.target.value;
+	var sw = document.getElementById('swatch');
+	sw.style.background = color;
+	document.getElementById('log').textContent += 'Changed color to: ' + color + "\n";
+}
+
+function htmlClickHandler() {
+	alert('HTML handler: Button clicked!');
+}
+
+function htmlMouseOverHandler(el) {
+	el.style.boxShadow = '0 6px 18px rgba(0,0,0,0.15)';
+}
+
+function htmlMouseOutHandler(el) {
+	el.style.boxShadow = 'none';
+}
+
+function htmlChangeHandler(selectEl) {
+	console.log('HTML handler: Selected ' + selectEl.value);
+}
+
+// onload via JS
+function onLoadInit() {
+	var log = document.getElementById('log');
+	log.textContent = 'Page loaded. Ready.\n';
+
+	// Register JS event listeners
+	document.getElementById('jsBtn').addEventListener('click', jsClickHandler);
+	var sw = document.getElementById('swatch');
+	sw.addEventListener('mouseover', jsMouseOverHandler);
+	sw.addEventListener('mouseout', jsMouseOutHandler);
+	document.getElementById('colorInput').addEventListener('change', jsChangeHandler);
+}
+
+// Declare global onload function name for HTML body onload
+function htmlOnLoad() {
+	console.log('HTML handler: onload fired');
+}
+</script>
+</head>
+
+<body onload="htmlOnLoad(); onLoadInit();">
+<h1>Unit-5 Event Handlers Demo</h1>
+
+<div class="card" onmouseover="htmlMouseOverHandler(this)" onmouseout="htmlMouseOutHandler(this)">
+	<h2>Interactive Card</h2>
+	<p>Demonstrates onclick, onmouseover, onmouseout, onchange, and onload using both HTML and JavaScript handlers.</p>
+	<p>
+		<button class="btn" onclick="htmlClickHandler()">HTML onclick</button>
+		<button class="btn" id="jsBtn">JS onclick</button>
+	</p>
+	<div id="swatch" class="swatch" title="Hover me (JS handlers)"></div>
+	<label>
+		Pick a color (HTML onchange):
+		<select onchange="htmlChangeHandler(this)">
+			<option value="">-- choose --</option>
+			<option value="#ffb3b3">Light Red</option>
+			<option value="#b3ffb3">Light Green</option>
+			<option value="#b3d1ff">Light Blue</option>
+		</select>
+	</label>
+	<label>
+		Pick a color (JS onchange):
+		<input type="color" id="colorInput" value="#e0e0e0" />
+	</label>
+	<div id="log" class="log"></div>
+</div>
+
+</body>
+</html>
+
+
