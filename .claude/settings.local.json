@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Expand-Archive -Path ''Unit-7 AssignmentCompareNames.zip'' -DestinationPath ''.'' -Force\")",
+      "Bash(powershell -Command \"Expand-Archive -Path ''Unit-7 AssignmentCompareNumbers.zip'' -DestinationPath ''.'' -Force\")",
+      "Bash(powershell -Command \"Expand-Archive -Path ''Unit-8 Loops Assignment.zip'' -DestinationPath ''.'' -Force\")",
+      "Bash(powershell -Command \"Expand-Archive -Path ''Unit-9 ArraysAssignmentSalesTaxLookup.zip'' -DestinationPath ''.'' -Force\")",
+      "Bash(powershell -Command \"Expand-Archive -Path ''Unit-10 StyleObjectAssignment.zip'' -DestinationPath ''.'' -Force\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

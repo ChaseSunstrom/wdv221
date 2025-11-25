@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+body {background-color:#d5e5d5;}
+</style>
+
+</head>
+
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../wdv221Homework.html">WDV221 Homework</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-7 Comparison and IF Statements - Compare Names Assignment</h3>
+<hr />
+<form id="form1" name="form1" method="post" action="" onsubmit="compareNames(); return false;">
+  <p>Name 1:
+    <input type="text" name="value1" id="value1" />
+  </p>
+  <p>Name 2:
+    <input type="text" name="value2" id="value2" />
+  </p>
+  <p>Result: <span id="result"></span></p>
+  <p><input type="submit" value="Compare Names" />
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="resetForm()" />
+  </p>
+</form>
+
+<h3>Instructions:</h3>
+<ol>
+  <li>Create a function called compareNames( ).</li>
+  <li>The function will compare the two input values from the form above.</li>
+  <li>The comparison should be <strong>case insensitive.</strong></li>
+  <li>The results should display &quot;Same&quot; or &quot;Different&quot;.</li>
+  <li>Use a span element and its .innerHTML property to display the results.</li>
+  <li>Provide a reset function that will reset the form and results.</li>
+</ol>
+
+<script>
+// Compare Names Assignment
+// This script compares two names entered in the form (case insensitive)
+// and displays "Same" or "Different" based on the comparison
+
+function compareNames() {
+	var name1 = document.getElementById('value1').value;
+	var name2 = document.getElementById('value2').value;
+	var resultSpan = document.getElementById('result');
+
+	// Compare names case insensitively
+	if (name1.toLowerCase() === name2.toLowerCase()) {
+		resultSpan.innerHTML = "Same";
+	} else {
+		resultSpan.innerHTML = "Different";
+	}
+}
+
+// Reset function to clear form and results
+function resetForm() {
+	document.getElementById('result').innerHTML = "";
+}
+</script>
+</body>
+</html>

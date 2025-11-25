@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Arrays</title>
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+body {background-color:#e5e5d5;}
+
+form	{
+	border:thin solid gray;
+	width:400px;
+	background-color:#9FF;
+	margin-left:50px;
+}
+
+form p	{
+	padding-left:5px;
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../wdv221Homework.html">WDV221 Homework</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Unit-9 Arrays Assignment</h2>
+<hr />
+<h3>Lookup Tax Rate Form</h3>
+<p>This form will use arrays to load the values into the drop down list. It will allow the user to select a state from the dropdown list. Once it is selected the tax rate for that state will be displayed on the form.</p>
+<form id="form1" name="form1" method="post" action="">
+  <p>Please select a state:
+    <select name="selectState" id="selectState" onchange="salesTaxLookup()">
+    	<option value="">Please select a state</option>
+    </select>
+  </p>
+  <p>The Sales tax rate is: <span id="displayTaxRate"></span> </p>
+  <p>
+    <input type="reset" name="button2" id="button2" value="Reset" onclick="resetTaxRate()" />
+  </p>
+</form>
+<h3>Instructions:</h3>
+<ol>
+  <li>Create an array called states that lists the following states in this order: Iowa, Illinois, Missouri, Wisconsin</li>
+  <li>Create a parallel array called stateSalesTax that lists the following values in this order: 6%,11%,7%,8%.</li>
+  <li>Use Javascript to dynamically load the list of states into the drop down menu.</li>
+  <li>Create a function called salesTaxLookup( ).</li>
+  <li>Use the onchange event handler on the select element to run salesTaxLookup( )</li>
+  <li>The function will use a lookup loop to find where the state is located in the states array. It can then get the corresponding tax rate from the stateSalesTax array.</li>
+  <li>It will display the tax rate for the selected state.</li>
+</ol>
+
+<script>
+// Arrays Assignment - Sales Tax Lookup
+// This script uses parallel arrays to store state names and their corresponding sales tax rates
+// The user can select a state and the tax rate will be displayed
+
+// Create arrays for states and their sales tax rates
+var states = ["Iowa", "Illinois", "Missouri", "Wisconsin"];
+var stateSalesTax = ["6%", "11%", "7%", "8%"];
+
+// Dynamically load states into the dropdown menu
+var selectElement = document.getElementById('selectState');
+for (var i = 0; i < states.length; i++) {
+	var option = document.createElement('option');
+	option.value = states[i];
+	option.text = states[i];
+	selectElement.appendChild(option);
+}
+
+// Function to lookup sales tax rate for selected state
+function salesTaxLookup() {
+	var selectedState = document.getElementById('selectState').value;
+	var taxRateSpan = document.getElementById('displayTaxRate');
+
+	// Use lookup loop to find the state and get corresponding tax rate
+	for (var i = 0; i < states.length; i++) {
+		if (states[i] === selectedState) {
+			taxRateSpan.innerHTML = stateSalesTax[i];
+			return;
+		}
+	}
+	// Clear if no state selected
+	taxRateSpan.innerHTML = "";
+}
+
+// Reset function to clear the displayed tax rate
+function resetTaxRate() {
+	document.getElementById('displayTaxRate').innerHTML = "";
+}
+</script>
+</body>
+</html>

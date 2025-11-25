@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Style Object-CSS Interactions Assignment</title>
+<link rel="stylesheet" href="../../../css/style.css" />
+<style type="text/css">
+body {background-color:#f5f5dc;}
+.style1 {color: #FF0000}
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="../../../index.html">Home</a></li>
+    <li><a href="../../wdv221Homework.html">WDV221 Homework</a></li>
+    <li><a href="../../../contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h1>WDV221 Intro Javascript</h1>
+<h3 id="h3Title">Style Object - CSS Interactions - Assignment</h3>
+<p>Please modify this page to create the following Dynamic HTML effects.</p>
+
+<p id="p1" onclick="this.style.color='red'">1. Click this paragraph to change the font color to red.</p>
+
+<p id="p2" onmouseover="document.getElementById('h3Title').style.textAlign='center'">2. Mouseover this paragraph to center the H3 element containing "CSS Interactions".</p>
+
+<p>3. Click the button to left align the H3 element.</p>
+<p>
+  <label>
+  <input type="button" name="button" id="button" value="Left Align H3" onclick="document.getElementById('h3Title').style.textAlign='left'" />
+  </label>
+</p>
+
+<p id="p4" onmouseover="this.style.fontFamily='Georgia, serif'" onclick="this.style.fontFamily=''">4. Mouseover this paragraph to change the font to a font of your choice. 5. Click on this paragraph to return the font to the default font.</p>
+
+<p id="saleWord">SALE</p>
+<p>6. Click on the button to make the word SALE font size 24.</p>
+<p>
+  <label>
+  <input type="button" name="button2" id="button2" value="Increase SALE Size" onclick="document.getElementById('saleWord').style.fontSize='24px'" />
+  </label>
+</p>
+
+<p>7. Click on the button to return the word to its original size.</p>
+<p>
+  <label>
+    <input type="button" name="button3" id="button3" value="Reset SALE Size" onclick="document.getElementById('saleWord').style.fontSize=''" />
+  </label>
+</p>
+
+<p id="p8" onclick="this.style.backgroundColor='yellow'">8. Use an eventhandler of your choice on this paragraph to make the paragraph background color yellow.</p>
+
+<p id="p9" onclick="document.getElementById('frogImg').style.display='none'">9. Use an onclick event to hide the Frog image shown below.</p>
+
+<p>10. Use the following button to make the Frog image shown below reappear.</p>
+<p>
+  <input type="button" name="button4" id="button4" value="Show Frog" onclick="document.getElementById('frogImg').style.display='block'" />
+</p>
+
+<p>11. Mouseover the Frog image to make its height and width double its original size.</p>
+<p><img id="frogImg" src="frog.jpg" width="100" height="100" onmouseover="this.style.width='200px'; this.style.height='200px'" onclick="this.style.width='100px'; this.style.height='100px'" /></p>
+<p>12. Use a click event on the Frog image to make it return to original size.</p>
+
+<p id="p13" ondblclick="this.style.border='2px solid black'">13. Doubleclick on this paragraph to place a border around this paragraph.</p>
+
+<p id="p14" onclick="document.getElementById('p13').style.border=''">14. Use an event handler of your choice to remove the border from the previous paragraph.</p>
+
+<p id="p15" onmouseover="this.style.backgroundColor='green'" onmouseout="this.style.backgroundColor=''">15. Mouseover this paragraph to turn its background color to green. When you mouseoff the paragraph return it to its normal color.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

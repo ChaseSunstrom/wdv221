@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+body {background-color:#e5d5d5;}
+</style>
+
+</head>
+
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../wdv221Homework.html">WDV221 Homework</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-7 Comparisons and IF Statements - Compare Numbers Assignment</h3>
+<hr />
+<form id="form1" name="form1" method="post" action="" onsubmit="compareNumbers(); return false;">
+  <p>Value 1:
+    <input type="text" name="value1" id="value1" />
+  </p>
+  <p>Value 2:
+    <input type="text" name="value2" id="value2" />
+  </p>
+  <p>Result: <span id="result"></span></p>
+  <p>
+    <input type="submit" value="Compare Numbers" />
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="resetForm()" />
+  </p>
+</form>
+
+<h3>Instructions:</h3>
+<ol>
+  <li>Create a function called compareNumbers( ).</li>
+  <li>The function will compare two numbers entered in the form above.</li>
+  <li>The function should display the largest number or &quot;Equal&quot; if both values are the same.</li>
+  <li>The results will be displayed in a span element using the .innerHTML property.</li>
+  <li>Provide a reset function that will properly clear the form between attempts.</li>
+</ol>
+
+<script>
+// Compare Numbers Assignment
+// This script compares two numbers entered in the form
+// and displays the largest number or "Equal" if both values are the same
+
+function compareNumbers() {
+	var num1 = Number(document.getElementById('value1').value);
+	var num2 = Number(document.getElementById('value2').value);
+	var resultSpan = document.getElementById('result');
+
+	// Compare numbers and display result
+	if (num1 > num2) {
+		resultSpan.innerHTML = num1;
+	} else if (num2 > num1) {
+		resultSpan.innerHTML = num2;
+	} else {
+		resultSpan.innerHTML = "Equal";
+	}
+}
+
+// Reset function to clear form and results
+function resetForm() {
+	document.getElementById('result').innerHTML = "";
+}
+</script>
+</body>
+</html>
+

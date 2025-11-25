@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Loops</title>
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+body {background-color:#d5d5e5;}
+</style>
+
+</head>
+
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../wdv221Homework.html">WDV221 Homework</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Unit-8 Loops Assignment</h2>
+<hr />
+<h3>Instructions:</h3>
+<p>Please complete the following exercises using JavaScript loops as indicated. Please place your code on this page. Use runtime scripts unless told otherwise.</p>
+
+<h4>1. Create a WHILE loop that will print out the numbers 0 to 4 each on a separate line.</h4>
+<div id="exercise1"></div>
+
+<script>
+// Exercise 1: WHILE loop to print numbers 0 to 4 each on a separate line
+var i = 0;
+while (i <= 4) {
+	document.write(i + "<br>");
+	i++;
+}
+</script>
+
+<h4>2. Create a FOR loop that will print out the numbers 4 to 0 each on a separate line.</h4>
+<div id="exercise2"></div>
+
+<script>
+// Exercise 2: FOR loop to print numbers 4 to 0 each on a separate line
+for (var j = 4; j >= 0; j--) {
+	document.write(j + "<br>");
+}
+</script>
+
+<h4>3. Create a loop that will print 1 to 5 each in its own paragraph element.</h4>
+<div id="exercise3"></div>
+
+<script>
+// Exercise 3: Loop to print 1 to 5 each in its own paragraph element
+for (var k = 1; k <= 5; k++) {
+	document.write("<p>" + k + "</p>");
+}
+</script>
+
+<h4>4. Create a loop that will print out the following numbers (5,10,15,20,25...) until one is greater than 40.</h4>
+<div id="exercise4"></div>
+
+<script>
+// Exercise 4: Loop to print multiples of 5 until greater than 40
+var num = 5;
+while (num <= 40) {
+	document.write(num + "<br>");
+	num += 5;
+}
+</script>
+
+<h4>5. Create a loop that will print out 6 of the following messages (Option 1, Option 2, Option 3, etc.) as options within the drop down menu below.</h4>
+<p>
+  <label>Select an Option!
+    <select name="select" id="select">
+    </select>
+  </label>
+</p>
+
+<script>
+// Exercise 5: Loop to populate dropdown with 6 options
+var selectElement = document.getElementById('select');
+for (var m = 1; m <= 6; m++) {
+	var option = document.createElement('option');
+	option.value = m;
+	option.text = "Option " + m;
+	selectElement.appendChild(option);
+}
+</script>
+
+<p>&nbsp;</p>
+</body>
+</html>
